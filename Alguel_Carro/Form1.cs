@@ -37,5 +37,18 @@ namespace Alguel_Carro
         {
             Close();
         }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            string modelo = txtModelo.Text;
+            DateTime retirada = pickerRetirada.Value;
+            DateTime devolucao = pickerDevolucao.Value;
+            double valorH = double.Parse(txtValorHora.Text);
+            double valorD = double.Parse(txtValorDia.Text);
+
+            Carro carro = new Carro(modelo);
+            Aluguel aluguel = new Aluguel(retirada, devolucao, carro);
+
+        }
     }
 }
