@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Alguel_Carro.Entities;
 
 namespace Alguel_Carro
 {
