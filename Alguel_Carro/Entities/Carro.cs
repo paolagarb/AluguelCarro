@@ -1,6 +1,6 @@
 ﻿namespace Alguel_Carro.Entities
 {
-    class Carro
+    public class Carro
     {
         public string Modelo { get; set; }
 

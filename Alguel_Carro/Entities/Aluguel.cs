@@ -2,7 +2,7 @@
    
 namespace Alguel_Carro.Entities
 {
-    class Aluguel
+    public class Aluguel
     {
         public DateTime Retirada { get; set; }
         public DateTime Devolução { get; set; }

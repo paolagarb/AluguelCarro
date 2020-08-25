@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Alguel_Carro.Entities
 {
-    class Fatura
+    public class Fatura
     {
         public double PagamentoBasico { get; set; }
         public double Imposto { get; set; }

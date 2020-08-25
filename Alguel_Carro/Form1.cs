@@ -14,6 +14,7 @@ namespace Alguel_Carro
 {
     public partial class Form1 : Form
     {
+        Aluguel aluguel;
         public Form1()
         {
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace Alguel_Carro
             Close();
         }
 
-        private void btnConfirmar_Click(object sender, EventArgs e)
+        public void btnConfirmar_Click(object sender, EventArgs e)
         {
             string modelo = txtModelo.Text;
             DateTime retirada = pickerRetirada.Value;
@@ -48,10 +49,14 @@ namespace Alguel_Carro
             double valorD = double.Parse(txtValorDia.Text);
 
             Carro carro = new Carro(modelo);
-            Aluguel aluguel = new Aluguel(retirada, devolucao, carro);
+             aluguel = new Aluguel(retirada, devolucao, carro);
 
+            ServicoAluguel servicoAluguel = new ServicoAluguel(valorH, valorD);
+            servicoAluguel.ProcessarFatura(aluguel);
+
+            
             this.Visible = false;
-            DadosAluguel dados = new DadosAluguel();
+            DadosAluguel dados = new DadosAluguel(aluguel);
             dados.Visible = true;
         }
     }
