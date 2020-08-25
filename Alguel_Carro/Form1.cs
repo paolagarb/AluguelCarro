@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Alguel_Carro.Entities;
+using Alguel_Carro.Services;
 
 namespace Alguel_Carro
 {
@@ -49,6 +50,9 @@ namespace Alguel_Carro
             Carro carro = new Carro(modelo);
             Aluguel aluguel = new Aluguel(retirada, devolucao, carro);
 
+            this.Visible = false;
+            DadosAluguel dados = new DadosAluguel();
+            dados.Visible = true;
         }
     }
 }
